@@ -1,6 +1,6 @@
-runtime: python39  # Python runtime, but could be any runtime
+runtime: python39  # Use a runtime that supports static file serving, like Python
 
 handlers:
 - url: /(.+)  # This will match all URLs
-  static_files: \1  # Serve static files from the root directory
-  upload: (.*)  # Match any file extension
+  static_files: \1  # Serve the static files from the root directory
+  upload: (.*)  # Match all files (HTML, CSS, JS, etc.)
