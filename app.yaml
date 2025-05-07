@@ -1,6 +1,6 @@
-runtime: python39  # Use any runtime (this is one example)
-entrypoint: gunicorn -b :$PORT main:app  # You can skip this part if no backend code
+runtime: python39  # Python runtime, but could be any runtime
 
 handlers:
-- url: /.*  
-  static_dir: public  # Replace 'public' with the directory containing your HTML, CSS, JS
+- url: /(.+)  # This will match all URLs
+  static_files: \1  # Serve static files from the root directory
+  upload: (.*)  # Match any file extension
