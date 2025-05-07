@@ -1,0 +1,6 @@
+runtime: python39  # Use any runtime (this is one example)
+entrypoint: gunicorn -b :$PORT main:app  # You can skip this part if no backend code
+
+handlers:
+- url: /.*  
+  static_dir: public  # Replace 'public' with the directory containing your HTML, CSS, JS
